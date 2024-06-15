@@ -1,0 +1,10 @@
+services:
+  app:
+    image: python:3.11
+    container_name: python-sample
+    volumes:
+      - .:/workspace/app
+    working_dir: /workspace/app/app
+    command: >
+      /bin/bash -c 'chmod +x /workspace/app/container_start.sh && /workspace/app/container_start.sh && /bin/bash'
+    tty: true
